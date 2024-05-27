@@ -5,6 +5,7 @@ import Header from './components/Header';
 import Home from './components/Home';
 import DetailsMovie from './components/DetailsMovie';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import SearchPage from './components/SearchPage';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Header />
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/movie" element={<SearchPage />} />
             <Route path="/movie/:id" element={<DetailsMovie />} />
           </Routes>
         </Router>
