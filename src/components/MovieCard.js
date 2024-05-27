@@ -9,8 +9,15 @@ import {
   Button,
   Image,
 } from '@chakra-ui/react';
+import { useNavigate } from 'react-router-dom';
 
 export default function MovieCard({ imdbID, Title, Plot, Genre, Poster }) {
+  const navigate = useNavigate();
+
+  const handleSeeMore = () => {
+    navigate(`/movie/${imdbID}`);
+  };
+
   return (
     <SimpleGrid width="100%">
       <Card>
@@ -23,7 +30,7 @@ export default function MovieCard({ imdbID, Title, Plot, Genre, Poster }) {
           <Text as="b">{Genre}</Text>
         </CardBody>
         <CardFooter>
-          <Button>See More</Button>
+          <Button onClick={handleSeeMore}>See More</Button>
         </CardFooter>
       </Card>
     </SimpleGrid>
